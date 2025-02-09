@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 43, 40, 38;
+  --foreground: 245, 245, 220;
+  --primary: 10, 35, 66;
+  --primary-foreground: 245, 245, 220;
+  --secondary: 232, 230, 217;
+  --secondary-foreground: 10, 35, 66;
+  --muted: 26, 54, 93;
+  --muted-foreground: 232, 230, 217;
+  --accent: 245, 245, 220;
+  --accent-foreground: 10, 35, 66;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+/* Hide default cursor */
+* {
+  cursor: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Gradient text animation */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientText 5s ease infinite;
+}
+
+/* Custom styles for the project slider */
+.project-slider .slick-dots li button:before {
+  color: #e8e6d9;
+}
+
+.project-slider .slick-dots li.slick-active button:before {
+  color: #e8e6d9;
+}
+
+.project-slider .slick-prev,
+.project-slider .slick-next {
+  z-index: 1;
+}
+
+.project-slider .slick-prev {
+  left: 10px;
+}
+
+.project-slider .slick-next {
+  right: 10px;
+}
+
+.project-slider .slick-prev:before,
+.project-slider .slick-next:before {
+  color: #e8e6d9;
+}
+

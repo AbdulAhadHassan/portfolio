@@ -11,19 +11,19 @@ const projects = [
     id: 1,
     title: "Elegant E-commerce Platform",
     description: "A full-stack e-commerce solution built with Next.js and Stripe",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/shop.jpg?height=200&width=300",
   },
   {
     id: 2,
     title: "Sophisticated Task Management App",
     description: "A React-based task management application with a refined interface",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/task.jpg?height=200&width=300",
   },
   {
     id: 3,
     title: "Stylish Weather Dashboard",
     description: "A weather dashboard that feels like checking the weather from a luxury hotel room",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/weather.jpg",
   },
 ]
 

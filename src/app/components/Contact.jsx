@@ -49,7 +49,7 @@ export default function Contact() {
             id="name"
             name="name"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-beige"
+            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
           />
         </div>
         <div>
@@ -61,7 +61,7 @@ export default function Contact() {
             id="email"
             name="email"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-beige"
+            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
           />
         </div>
         <div>
@@ -72,7 +72,7 @@ export default function Contact() {
             id="message"
             name="message"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-beige"
+            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
             rows={4}
           ></textarea>
         </div>

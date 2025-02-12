@@ -13,7 +13,7 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-beige-light to-beige-dark"
+          className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r beige from-beige-light to-beige-dark"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -21,7 +21,7 @@ export default function Hero() {
           Welcome to My Elegant Portfolio
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl text-beige mb-6"
+          className="text-lg md:text-xl text-beige mb-6 "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -45,7 +45,7 @@ export default function Hero() {
       >
         <div className="relative w-full max-w-md aspect-square">
           <Image
-            src="/placeholder.svg"
+            src="/1f93e970-4d0e-4571-ada7-28f6311224e3.jpeg"
             alt="Hero Image"
             layout="fill"
             objectFit="cover"

@@ -2,6 +2,7 @@ import "./globals.css"
 import { Poppins } from "next/font/google"
 import Header from "./components/Header"
 import { AnimatePresence } from "framer-motion"
+import SocialBar from "./components/SocialBar"
 
 const poppins = Poppins({
   weight: ["300", "400", "600", "700"],
@@ -20,13 +21,10 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} font-sans bg-navy text-beige`}>
         <Header />
         <AnimatePresence mode="wait">
-          <main>{children}</main>
+          <main className="pb-16">{children}</main>
         </AnimatePresence>
-        <footer className="bg-navy-light border-t border-beige/20 py-4 text-center text-sm">
-          <p>&copy; 2025 My Elegant Portfolio. All rights reserved.</p>
-        </footer>
+        <SocialBar />
       </body>
     </html>
   )
 }
-

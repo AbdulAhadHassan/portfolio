@@ -6,7 +6,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="bg-navy-light/50 backdrop-blur-sm p-8 rounded-lg border border-beige/20"
+      className="bg-navy-light/50 backdrop-blur-sm p-8 rounded-lg border border-beige/20 shadow-lg hover:shadow-xl"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

@@ -12,10 +12,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'beige': '#f5f5dc',
-        'beige-light': '#fafad2',
-        'beige-dark': '#d2b48c',
-        'navy': '#0a2342',
+        'beige': '#d7c9ae',
+        'beige-light': '#e9e0d1',
+        'beige-dark': '#a58763',
+        'navy-light': '#2c2d2e',
+        'navy': '#222324',
+        'navy-dark': '#000000',
       },
       fontFamily: {
         sans: ["var(--font-poppins)"],

@@ -17,7 +17,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="bg-navy-light/50 backdrop-blur-sm p-8 rounded-lg border border-beige/20"
+      className="bg-navy-light/50 backdrop-blur-sm p-8 rounded-lg border border-beige/20 shadow-lg hover:shadow-xl"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -49,7 +49,7 @@ export default function Contact() {
             id="name"
             name="name"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
+            className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
           />
         </div>
         <div>
@@ -61,7 +61,7 @@ export default function Contact() {
             id="email"
             name="email"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
+            className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
           />
         </div>
         <div>
@@ -72,7 +72,7 @@ export default function Contact() {
             id="message"
             name="message"
             required
-            className="w-full p-2 bg-navy-dark/30 border border-beige/20 rounded text-navy"
+            className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
             rows={4}
           ></textarea>
         </div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section id="hero" className=" flex flex-col md:flex-row items-center justify-center mt-6 py-16 md:py-0">
+    <section id="hero" className="min-h-screen flex flex-col md:flex-row items-center justify-center py-16 md:py-0">
       
       <motion.div
         className="w-full md:w-1/2 text-center md:text-left px-4 md:px-8 mb-8 md:mb-0"

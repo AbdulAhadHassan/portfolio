@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/api/send", "dest": "/src/api/send.js" }
+    ]
+  }
+  

@@ -1,8 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 
 export default function About() {
+  const [showMore, setShowMore] = useState(false)
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore)
+  }
+
   return (
     <motion.section
       id="about"
@@ -21,18 +28,23 @@ export default function About() {
       >
         About Me
       </motion.h2>
-      <motion.p
-        className="text-beige leading-relaxed"
+      <motion.div
+        className="text-beige text-lg md:text-xl px-4 md:px-8"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         viewport={{ once: true }}
       >
-        I'm a passionate web developer with experience in React, Next.js, and various other modern web technologies. I
-        love creating responsive and user-friendly websites that feel as sophisticated and inviting as a well-designed
-        living room. My approach combines elegance and creativity with technical expertise to deliver refined digital
-        experiences.
-      </motion.p>
+        <p className={`overflow-hidden ${showMore ? "" : "line-clamp-4"}`}>
+          I'm a web developer passionate about creating sophisticated and inviting digital experiences. I have experience in various web technologies including React, Next.js, HTML, CSS, Tailwind, MongoDB, Node.js, JavaScript, and Express.js. I enjoy working on challenging projects and continuously learning new skills to improve my craft.
+        </p>
+        <button
+          onClick={toggleShowMore}
+          className="text-beige-light font-semibold mt-2 block lg:hidden"
+        >
+          {showMore ? "Show Less" : "Show More"}
+        </button>
+      </motion.div>
     </motion.section>
   )
 }

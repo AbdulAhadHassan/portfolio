@@ -2,17 +2,65 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { submitContactForm } from "../actions/contact"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 export default function Contact() {
-  const [message, setMessage] = useState("")
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  async function handleSubmit(formData) {
-    const result = await submitContactForm(formData)
-    if (result.success) {
-      setMessage(result.message)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/send', {  
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        toast.success('Message sent successfully', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Failed to send message', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('Failed to send message', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
-  }
+  };
 
   return (
     <motion.section
@@ -33,7 +81,7 @@ export default function Contact() {
         Get in Touch
       </motion.h2>
       <motion.form
-        action={handleSubmit}
+        onSubmit={handleSubmit}
         className="space-y-4"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -48,6 +96,8 @@ export default function Contact() {
             type="text"
             id="name"
             name="name"
+            value={formData.name}
+            onChange={handleChange}
             required
             className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
           />
@@ -60,6 +110,8 @@ export default function Contact() {
             type="email"
             id="email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             required
             className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
           />
@@ -71,6 +123,8 @@ export default function Contact() {
           <textarea
             id="message"
             name="message"
+            value={formData.message}
+            onChange={handleChange}
             required
             className="w-full p-2 bg-beige border border-beige/20 rounded text-navy"
             rows={4}
@@ -85,7 +139,7 @@ export default function Contact() {
           Send Message
         </motion.button>
       </motion.form>
-      {message && <p className="mt-4 text-beige-light">{message}</p>}
+      <ToastContainer />
     </motion.section>
   )
 }
